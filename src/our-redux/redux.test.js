@@ -1,5 +1,5 @@
 
-import {CHANGE_COUNT, CHANGE_VALUE, reducer, initialState} from './redux';
+import {CHANGE_COUNT, CHANGE_TEXT, reducer, initialState} from './redux';
 
 it('returns undefined state correctly', () => {
     let undefinedState = reducer(undefined, undefined);
@@ -16,7 +16,7 @@ it ('returns change value state correctly', () => {
         ...initialState,
         value: 'Something new'
     }
-    let changeValueState = reducer(initialState, {type:CHANGE_VALUE, value:"Something new"});
+    let changeValueState = reducer(initialState, {type:CHANGE_TEXT, value:"Something new"});
     expect(changeValueState).toEqual(expectedState);
 });
 

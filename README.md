@@ -1,4 +1,4 @@
-# Create Your Own Redux
+# Build Your Own Redux
 
 This repository shows a basic Redux implementation and attempts to show the simplicity of it. This repository builds off of functional components created in [redux-demo](https://github.com/MikeTheReader/redux-demo), but attempts to handle all actual Redux calls with a home-brew Redux and without any of the convenience methods (such as `mapStateToProps`).
 

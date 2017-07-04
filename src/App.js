@@ -30,7 +30,7 @@ class App extends Component {
           <EnterStuff store={store}/>
         </div>
         <div className="col-md-4">
-          <DisplayValues value={this.state.value} count={this.state.count}/>
+          <DisplayValues text={this.state.text} count={this.state.count}/>
         </div>
       </div>
     );

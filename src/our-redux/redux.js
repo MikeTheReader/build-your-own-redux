@@ -1,11 +1,11 @@
 export const initialState = {
-  "value": "Sample Text",
+  text: "Sample Text",
   count: 1
 }
 
 // Actions 
 
-export const CHANGE_VALUE = 'CHANGE_VALUE';
+export const CHANGE_TEXT = 'CHANGE_TEXT';
 export const CHANGE_COUNT = 'CHANGE_COUNT';
 
 
@@ -15,11 +15,11 @@ export const reducer = (state = initialState, action) => {
     if (!action) return state;
     
     switch (action.type) {
-        case CHANGE_VALUE:
-            const {value} = action;
+        case CHANGE_TEXT:
+            const {text} = action;
             return {
                 ...state,
-                value
+                text
             }
         case CHANGE_COUNT:
             const {count} = action;

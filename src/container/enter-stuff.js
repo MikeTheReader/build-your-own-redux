@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
- import { CHANGE_VALUE, CHANGE_COUNT } from '../our-redux/redux';
+ import { CHANGE_TEXT, CHANGE_COUNT } from '../our-redux/redux';
 
-import ValueInput from '../presentational/functional-value-input';
+import ValueInput from '../presentational/functional-text-input';
 import CountInput from '../presentational/functional-count-input';
 import CountSlider from '../presentational/functional-count-slider';
 
@@ -10,7 +10,7 @@ class EnterStuff extends Component {
     constructor(props) {
         super(props);
         this.state = props.store.getState();
-        this.onChangeValue = this.onChangeValue.bind(this);
+        this.onChangeText = this.onChangeText.bind(this);
         this.onChangeCount = this.onChangeCount.bind(this);
     }
 
@@ -24,10 +24,10 @@ class EnterStuff extends Component {
         this.unsubscribe();
     }
 
-    onChangeValue(value) {
+    onChangeText(text) {
         this.props.store.dispatch({
-            type: CHANGE_VALUE,
-            value: value
+            type: CHANGE_TEXT,
+            text: text
         });
     }
 
@@ -47,15 +47,15 @@ class EnterStuff extends Component {
                 <div className="panel-body">
                     <ValueInput 
                         label="Input Text"
-                        value={this.state.value}
+                        text={this.state.text}
                         onChange={(event) => this.onChangeValue(event.target.value)}/>
                     <CountInput
                         label="How Many Times Do You Want to Show the Text?"
-                        value={this.state.count}
+                        count={this.state.count}
                         onChange={(event) => this.onChangeCount(parseInt(event.target.value, 10))}/>
                     <CountSlider
                         label="Or use this one to adjust the count"
-                        value={this.state.count}
+                        count={this.state.count}
                         onChange={(event) => this.onChangeCount(parseInt(event.target.value, 10))}/>
                 </div>
             </div>

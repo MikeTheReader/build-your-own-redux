@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CountSlider = ({value, onChange, label}) => {
+const CountSlider = ({count, onChange, label}) => {
     return (
         <div className='form-group'>
             <label>{label}</label>
             <input
                 type='range'
-                value={value}
+                value={count}
                 min="0" max="100"
                 onChange={onChange}/>
         </div>
@@ -16,7 +16,7 @@ const CountSlider = ({value, onChange, label}) => {
 
 CountSlider.propTypes = {
     label: PropTypes.string.isRequired,
-    value: PropTypes.number,
+    count: PropTypes.number,
     onChange: PropTypes.func.isRequired
 }
 

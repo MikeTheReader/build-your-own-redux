@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ValueInput = ({label, value, onChange}) => {
+const ValueInput = ({label, text, onChange}) => {
     return (
         
         <div className='form-group'>
             <label>{label}</label>
             <input className='form-control'
                 type='text'
-                value={value}
+                value={text}
                 onChange={onChange}/>
         </div>
     )
@@ -16,7 +16,7 @@ const ValueInput = ({label, value, onChange}) => {
 
 ValueInput.propTypes = {
     label: PropTypes.string.isRequired,
-    value: PropTypes.string,
+    text: PropTypes.string,
     onChange: PropTypes.func.isRequired
 };
 
